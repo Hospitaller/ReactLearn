@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import parallaxMethod from './parallax';
-import logo from './logo.svg';
+
 
 import './scss/App.scss';
-import Login from './Login';
+import LoginHead from './components/LoginHead';
+import LoginForm from './components/LoginForm';
+import ButtonForm from './components/ButtonForm';
 
-class App extends Component {
-  
-
-  render() {
+const App = () =>  {
+ 
     parallaxMethod();
     return (
-     
       <div id="mainWraper">
         <div className="formWraper">
-          <Login />
+          <LoginHead />
+          <LoginForm />
+          <ButtonForm />
         </div>
         <div id="mountain"></div>
       </div>
     );
-    
-  }
 }
 
 export default App;
