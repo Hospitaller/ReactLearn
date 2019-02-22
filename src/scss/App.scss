@@ -171,3 +171,33 @@
     transform: perspective (100px);
 }
 /*--END--Block 3d Effect*/
+
+
+/*LoginToggler Component*/
+.togglerWraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+        .toggler{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 5.2px;
+            width: 93px;
+            height: 44px;
+            background-color: #49c1ff;
+            transition: 0.2s;
+            box-shadow: $shadowBlock;
+            @extend %block3d;
+            transform: translateZ(80px);
+            &:hover{
+                cursor: pointer;
+                background-color: #49dbffce;
+                transform: translateZ(50px);
+            }
+        }
+}
