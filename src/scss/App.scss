@@ -60,7 +60,6 @@
     background-repeat: no-repeat;
 }
 
-
 /*LoginHead Component*/
 
 .login{
@@ -86,6 +85,7 @@
 .title{
     transform-style: preserve-3d;
     transform: translateZ(30px);
+    margin: 0;
 }
 
 /*LoginForm Component*/
@@ -137,6 +137,7 @@
     box-shadow: $shadowBlock;
     @extend %block3d;
     transform: translateZ(80px);
+    border-bottom: 2px solid #49c1ff;
 }
 
 .btnLogin{
@@ -200,4 +201,8 @@
                 transform: translateZ(50px);
             }
         }
+}
+
+#loginToggler {
+    margin-right: 10px;
 }
