@@ -21,6 +21,7 @@ const App = () => {
   const [login, setLoginToggler] = useState(1) //Хук для перключения окна ввода логин-регистрация
   const setLogin = () => setLoginToggler(1)
   const setRegister = () => setLoginToggler(0)
+  
   parallaxMethod();
   if (login === 1) {
     return (
