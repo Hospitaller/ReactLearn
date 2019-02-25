@@ -2,26 +2,18 @@ import React, {useState } from 'react';
 
 
 const LoginForm = (props) => {
-
     const formData = { //Пустые инпуты
         name: "",
         pass: "",
         colorName: "",
         colorPass: ""
     }
-    
-    const accessGranted = { //Верные данные для входа
-        name: "Ivan",
-        pass: "ivan1987"
-    }
     const [name, setName] = useState(formData.name) 
     const [pass, setPass] = useState(formData.pass)
     const [colorName, setColorName] = useState(formData.colorName)
     const [colorPass, setColorPass] = useState(formData.colorPass)
     
-    
-    const handleNameInput = (e) => { //Заполняет state в имени
-        
+    const handleNameInput = (e) => { //Заполняет state в имени 
         setName(e.target.value);
         formData.name = e.target.value;
         if (formData.name.length < 4) { //Более 3 символов
@@ -29,23 +21,19 @@ const LoginForm = (props) => {
         } else {
             setColorName("none");
         }
-        console.log(formData.name)
     }
+
     const handlePassInput = (e) => { //Заполняет state в пароле
         
         setPass(e.target.value);
         formData.pass = e.target.value;
         if (formData.pass.length < 1) { //Не пустое поле
             setColorPass("1px solid red");
-            
-            
         } else {
             setColorPass("none");
-            
         }
-        console.log(pass)
     }
-    
+
     return (
         <div className="userFormWraper">
             <form className="userForm">

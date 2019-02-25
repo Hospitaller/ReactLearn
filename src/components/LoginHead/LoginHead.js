@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const LoginHead = (props) => {
-    
         return (
             <div className="login">
                 <h4 className="loginTo">{props.title}</h4>
