@@ -1,51 +1,53 @@
-import React, {useState } from 'react';
+import React from 'react';
 
-
-const LoginForm = (props) => {
-    const formData = { //Пустые инпуты
-        name: "",
-        pass: "",
-        colorName: "",
-        colorPass: ""
-    }
-    const [name, setName] = useState(formData.name) 
-    const [pass, setPass] = useState(formData.pass)
-    const [colorName, setColorName] = useState(formData.colorName)
-    const [colorPass, setColorPass] = useState(formData.colorPass)
-    
-    const handleNameInput = (e) => { //Заполняет state в имени 
-        setName(e.target.value);
-        formData.name = e.target.value;
-        if (formData.name.length < 4) { //Более 3 символов
-            setColorName("1px solid red");
-        } else {
-            setColorName("none");
+class LoginForm extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            pass: "",
+            colorName: "",
+            colorPass: ""
         }
     }
-
-    const handlePassInput = (e) => { //Заполняет state в пароле
+    render() {
         
-        setPass(e.target.value);
-        formData.pass = e.target.value;
-        if (formData.pass.length < 1) { //Не пустое поле
-            setColorPass("1px solid red");
-        } else {
-            setColorPass("none");
+       
+        
+        const handleNameInput = (e) => { //Заполняет state в имени 
+            
+            console.log(this.props.name)
+            if (e.target.value.length < 4) { //Более 3 символов
+                this.setState({ colorName: "1px solid red" });
+           
+            } else {
+                this.setState({ colorName: "none" });
+            }
         }
-    }
-
-    return (
-        <div className="userFormWraper">
+    
+        const handlePassInput = (e) => { //Заполняет state в пароле
+            this.setState({pass: e.target.value})
+            
+           
+            if (this.props.pass.length < 1) { //Не пустое поле
+                this.setState({ colorPass: "1px solid red" });
+            } else {
+                this.setState({ colorPass: "none" });
+            }
+        }
+        return (
+            <div className="userFormWraper">
             <form className="userForm">
                 <div className="inputWraper">
-                    <input type="text" name="firstname" placeholder="Name" value={name} onChange={handleNameInput} style={{border:colorName}}></input>
+                    <input type="text" name="firstname" placeholder="Name"  onChange={handleNameInput} style={{border:this.props.colorName}}></input>
                 </div>
                 <div className="inputWraper">
-                    <input type="password" name="password" placeholder="Enter password" value={pass} onChange={handlePassInput} style={{border:colorPass}}></input>
+                    <input type="password" name="password" placeholder="Enter password" value={this.props.pass} onChange={handlePassInput} style={{border:this.props.colorPass}}></input>
                 </div>
            </form>
         </div>
-    );
+        )
+    }
 }
 
 export default LoginForm;

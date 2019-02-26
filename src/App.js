@@ -25,7 +25,7 @@ const App = (props) => {
       <div id="mainWraper">
         <div className="formWraper">
             {loginHead}
-            <LoginForm />
+          <LoginForm name={""}/>
           <ButtonForm enterBtn={"Login"}/>
             <div className="togglerWraper">
               <div id="loginToggler" className="toggler" onClick={setLogin}>Login</div>
