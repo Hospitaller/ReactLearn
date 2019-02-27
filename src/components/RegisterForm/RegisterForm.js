@@ -1,9 +1,9 @@
 import React from 'react';
 
-const RegisterForm = () => {
-   
-    return (
-        <div className="userFormWraper">
+class RegisterForm extends React.Component {
+    render() {
+        return (
+            <div className="userFormWraper">
             <form className="userForm">
                 <div className="inputWraper">
                     <input type="text" name="firstname" placeholder="Your name"></input>
@@ -16,7 +16,8 @@ const RegisterForm = () => {
                 </div>
            </form>
         </div>
-    );
+        )
+    }
 }
 
 export default RegisterForm;

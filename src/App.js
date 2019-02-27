@@ -1,59 +1,43 @@
-import React, {useState } from 'react';
-import parallaxMethod from './parallax';
+import React from 'react';
 import './scss/App.scss';
-import LoginHead from './components/LoginHead/LoginHead';
-import LoginForm from './components/LoginForm/LoginForm';
-import RegisterForm from './components/RegisterForm/RegisterForm';
-import ButtonForm from './components/ButtonForm/ButtonForm';
+import LoginPage from './components/LoginPage/LoginPage';
+import MainPage from './components/MainPage/MainPage';
 
 
-const headDataLogin = [
-  [{ title: "Login", text: "Your Company" }],
-  [{ title: "Register", text: "Register Company" }],
-];
 
-let loginHead = headDataLogin[0].map((h, index) => <LoginHead key={index} title={h.title} text={h.text} />);
-let registerHead = headDataLogin[1].map((h, index) => <LoginHead key={index} title={h.title} text={h.text} />);
 
-const App = (props) => {
-  const [login, setLoginToggler] = useState(1) //Хук для переключения окна ввода логин-регистрация  
-  const setLogin = () => setLoginToggler(1);
-  const setRegister = () => setLoginToggler(0);
-  parallaxMethod();
-  if (login === 1) {
-    return (
-      <div id="mainWraper">
-        <div className="formWraper">
-            {loginHead}
-          <LoginForm name={""}/>
-          <ButtonForm enterBtn={"Login"}/>
-            <div className="togglerWraper">
-              <div id="loginToggler" className="toggler" onClick={setLogin}>Login</div>
-              <div id="signinToggler" className="toggler" onClick={setRegister}>Sign In</div>
-            </div>
-          </div>
-        <div id="mountain"></div>
-      </div>
-    )
+class App extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      page: "main"
+    }
+    
   }
-    return (
-      <React.Fragment>
-      <div id="mainWraper">
-        <div className="formWraper">
-            {registerHead}
-            <RegisterForm />
-            <ButtonForm enterBtn={"Register"} />
-            <div className="togglerWraper">
-              <div id="loginToggler" className="toggler" onClick={setLogin}>Login</div>
-              <div id="signinToggler" className="toggler" onClick={setRegister}>Sign In</div>
-            </div>
-          </div>
-        <div id="mountain"></div>
-      </div>
-      </React.Fragment>
-    );
+  changePage = () => { //Сюда валидацию, если true = открываем
+    this.setState({page: "main"});
+  }
+  test = () => {
+    this.setState({page: "login"});
+  }
+  render() {
+    
+    if(this.state.page === "login") {
+      return (
+            <LoginPage login={1} pageHandler={this.changePage} /> 
+        )
+    } else {
+      return (
+        <div className="mainPageWraper">
+          <MainPage />
+          <button onClick={this.test}>НАЗАД</button>
+        </div>
+      )
+    }
+    
+  }
+  
 }
-
 
 export default App;
 
