@@ -1,27 +1,22 @@
 import React from "react";
+import MainMenu from "./MainMenu/MainMenu";
+import Inbox from "./Inbox/Inbox";
+import Contacts from "./Contacts/Contacts";
+import Chat from "./Chat/Chat";
+import Profile from "./Profile/Profile";
 
 
 class MainPage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="headPanel">
-                    <h1>Hello from Main Page!!!</h1>
+                <div className="b-panelWraper b-panelWraper_marginCenter">
+                    <MainMenu />
+                    <Inbox />
+                    <Contacts />
+                    <Chat />
+                    <Profile />
                 </div>
-                <div className="panelWraper">
-                    <div className="panelLeft">
-                        <div className="navMain">
-                            MAIN
-                        </div>
-                        <div className="navPosts">
-                            POSTS
-                        </div>
-                    </div>
-                    <div className="panelRight">
-                        <p>right</p>
-                    </div>
-                </div>
-                
             </React.Fragment>
         )
     }

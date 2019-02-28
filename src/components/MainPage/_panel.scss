@@ -1,0 +1,17 @@
+@import "./MainMenu/mainMenu";
+@import "./Inbox/inbox";
+@import "./Contacts/contacts";
+@import "./Profile/profile";
+@import "./Chat/chat";
+
+.b-panelWraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+        &_marginCenter{
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+}

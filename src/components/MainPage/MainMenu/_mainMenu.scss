@@ -1,0 +1,21 @@
+.b-panel{
+    min-width: 150px;
+    height: 800px;
+    &__mainMenu{
+        background-color: #1d232a;
+        color: #fff;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0.02) 95%, #101010 100%);
+        &__menuButton{
+            height: 50px;
+                display: flex;
+                justify-content: center;
+                background-position: center;
+                align-items: center;
+                &.b-imgWraper{
+                    width: 16px;
+                    height: 12px;
+                    background-position: center;
+                 } 
+            }
+    }
+}
