@@ -28,17 +28,16 @@ class LoginPage extends React.Component {
         const setRegister = () => {
           this.setState({login: 0});
         }
-       
           if (this.state.login === 1) {
             return (
               <div id="mainWraper">
-                <div className="formWraper">
+                <div className="b-formWraper">
                     {loginHead}
                   <LoginForm name={""}/>
                         <ButtonForm enterBtn={"Login"} toggleNow={this.props.pageHandler}/>
-                    <div className="togglerWraper">
-                      <div id="loginToggler" className="toggler" onClick={setLogin}>Login</div>
-                      <div id="signinToggler" className="toggler" onClick={setRegister}>Sign In</div>
+                    <div className="b-togglerWraper">
+                      <div id="loginToggler" className="b-togglerWraper__toggler" onClick={setLogin}>Login</div>
+                      <div id="signinToggler" className="b-togglerWraper__toggler" onClick={setRegister}>Sign In</div>
                     </div>
                   </div>
                 <div id="mountain"></div>
@@ -48,13 +47,13 @@ class LoginPage extends React.Component {
             return (
               <React.Fragment>
               <div id="mainWraper">
-                <div className="formWraper">
+                <div className="b-formWraper">
                     {registerHead}
                     <RegisterForm />
                     <ButtonForm enterBtn={"Register"} />
-                    <div className="togglerWraper">
-                      <div id="loginToggler" className="toggler" onClick={setLogin}>Login</div>
-                      <div id="signinToggler" className="toggler" onClick={setRegister}>Sign In</div>
+                    <div className="b-togglerWraper">
+                      <div id="loginToggler" className="b-togglerWraper__toggler" onClick={setLogin}>Login</div>
+                      <div id="signinToggler" className="b-togglerWraper__toggler" onClick={setRegister}>Sign In</div>
                     </div>
                   </div>
                 <div id="mountain"></div>
@@ -62,8 +61,6 @@ class LoginPage extends React.Component {
               </React.Fragment>
             );
         }
-        
-        
       }
 }
 

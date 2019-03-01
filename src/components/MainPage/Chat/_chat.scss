@@ -1,7 +1,7 @@
 .b-panel{
-    min-width: 150px;
-    height: 800px;
     &__chat{
+        min-width: 150px;
+        height: 800px;
         background-color: #aab0b9;
         background-image: linear-gradient(to bottom, #eceef2 0%, rgba(236, 238, 242, 0) 100%);
             &_size100{

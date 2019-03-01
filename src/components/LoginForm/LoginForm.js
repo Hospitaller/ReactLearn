@@ -30,11 +30,11 @@ class LoginForm extends React.Component{
         }
         return (
             <div className="userFormWraper">
-            <form className="userForm">
-                <div className="inputWraper">
+            <form className="b-userForm">
+                <div className="b-userForm__inputWraper">
                     <input type="text" name="firstname" placeholder="Name" onChange={handleNameInput} style={{border:this.state.colorName}}></input>
                 </div>
-                <div className="inputWraper">
+                <div className="b-userForm__inputWraper">
                     <input type="password" name="password" placeholder="Enter password" onChange={handlePassInput} style={{border:this.state.colorPass}}></input>
                 </div>
            </form>

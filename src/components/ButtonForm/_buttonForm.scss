@@ -1,0 +1,38 @@
+.buttonFormWraper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.keepLogin{
+    background-color: #fff;
+    box-shadow: $shadowBlock;
+    @extend %block3d;
+    transform: translateZ(80px);
+    border-bottom: 2px solid #49c1ff;
+}
+
+.btnLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 93px;
+    height: 44px;
+    background-color: #49c1ff;
+    transition: 0.2s;
+    box-shadow: $shadowBlock;
+    @extend %block3d;
+    transform: translateZ(80px);
+        &:hover{
+            cursor: pointer;
+            background-color: #49dbffce;
+            transform: translateZ(50px);
+        }
+        .btnTitle{
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 5.2px;
+            position: relative;
+        }
+}
