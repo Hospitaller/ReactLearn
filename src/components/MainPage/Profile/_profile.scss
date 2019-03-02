@@ -1,5 +1,45 @@
 .b-panel{
     &__profile{
+        min-width: 190px;
+        height: 798px;
         background: #fff;
+        border: 1px solid #E6E6E6;
+        
     }
+}
+
+.b-profile {
+    
+    &__head{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &::after{
+            display: block;
+            position: absolute;
+            content: "";
+            width: 150px;
+            height: 1px;
+            background-color: #000;
+            opacity: 0.1;
+            margin: 25px 0;
+            
+        }
+    }
+}
+.b-head{
+    &__notify{
+
+    }
+    &__profileName{
+        & p{
+            font-size: 14px;
+            color: #293037;
+            line-height: 18px;
+            opacity: 0.7;
+            
+        }
+        
+    }
+    
 }

@@ -1,6 +1,11 @@
+import Whatsapp from "./Whatsapp/Whatsapp"
+import Facebooking from "./Facebooking/Facebooking"
+import Viber from "./Viber/Viber"
+import Skype from "./Skype/Skype"
+import Nautilus from "./Nautilus/Nautilus"
+
+
 import React from 'react';
-
-
 
 class MainMenu extends React.Component{
     constructor(props) {
@@ -19,8 +24,7 @@ class MainMenu extends React.Component{
             } else {
                 path.add("active")
             }
-           
-            
+
         }
         return (
             <div className="b-panel b-panel__mainMenu">
@@ -30,21 +34,11 @@ class MainMenu extends React.Component{
                     </div>
                 </div>
                 <div className="b-mainMenu__socialButton" onClick={setActive} >
-                    <div className="b-socialButton__buttonUnit" >
-                        <img src={require('./w_icon.png' )}  alt={"Whatsapp"}  />
-                    </div>
-                    <div className="b-socialButton__buttonUnit">
-                        <img src={require('./fb_icon.png' )}  alt={"Facebooking"}  />
-                    </div>
-                    <div className="b-socialButton__buttonUnit">
-                        <img src={require('./v_icon.png' )}  alt={"Viber"}  />
-                    </div>
-                    <div className="b-socialButton__buttonUnit">
-                        <img src={require('./s_icon.png' )}  alt={"Skype"}  />
-                    </div>
-                    <div className="b-socialButton__buttonUnit">
-                        <img src={require('./n_icon.png' )}  alt={"Nautilus"}  />
-                    </div>
+                    <Whatsapp />
+                    <Facebooking />
+                    <Viber />
+                    <Skype />
+                    <Nautilus />
                 </div>    
             </div>
         )

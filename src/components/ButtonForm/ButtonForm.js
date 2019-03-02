@@ -1,7 +1,7 @@
 import React from 'react';
 
 class ButtonForm extends React.Component {
-     ttt = () => {
+     toggler = () => {
         this.props.toggleNow()
     }
     render() {
@@ -13,7 +13,7 @@ class ButtonForm extends React.Component {
                     <input type="checkbox"></input>             
                 Keep me logged in
             </div>
-                <div className="btnLogin" onClick={this.ttt}>
+                <div className="btnLogin" onClick={this.toggler}>
                 <div className="btnTitle">{this.props.enterBtn}</div>
             </div>
             </div>
