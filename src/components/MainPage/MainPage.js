@@ -7,14 +7,24 @@ import Profile from "./Profile/Profile";
 
 
 class MainPage extends React.Component {
+    state = {
+        block: "Чат не выбран",
+        chat: "qqq"
+    }
+    updateData = (value) => {
+        this.setState({ block: value })
+    }
+    updateChat = (value) => {
+        this.setState({chat: value})
+    }
     render() {
         return (
             <React.Fragment>
                 <div className="b-panelWraper b-panelWraper_marginCenter">
-                    <MainMenu />
+                    <MainMenu updateData={this.updateData} updateChat={this.updateChat}/>
                     <Inbox />
                     <Contacts />
-                    <Chat />
+                    <Chat updateData={this.updateChat} />
                     <Profile />
                 </div>
             </React.Fragment>

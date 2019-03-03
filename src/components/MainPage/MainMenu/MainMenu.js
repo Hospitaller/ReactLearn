@@ -8,11 +8,18 @@ import Nautilus from "./Nautilus/Nautilus"
 import React from 'react';
 
 class MainMenu extends React.Component{
+    
+    
     constructor(props) {
         super(props);
         this.state = {
-            isToggleOn: true
+            isToggleOn: true,
+            
         };
+    }
+    visBlock = (value) => {
+        this.props.updateData(value);
+        this.props.updateChat(value);
     }
     
     render() {
@@ -34,11 +41,11 @@ class MainMenu extends React.Component{
                     </div>
                 </div>
                 <div className="b-mainMenu__socialButton" onClick={setActive} >
-                    <Whatsapp />
-                    <Facebooking />
-                    <Viber />
-                    <Skype />
-                    <Nautilus />
+                    <Whatsapp updateChild={this.visBlock}/>
+                    <Facebooking updateChild={this.visBlock}/>
+                    <Viber updateChild={this.visBlock}/>
+                    <Skype updateChild={this.visBlock}/>
+                    <Nautilus updateChild={this.visBlock}/>
                 </div>    
             </div>
         )
