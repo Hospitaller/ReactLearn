@@ -21,10 +21,10 @@ class MainPage extends React.Component {
         return (
             <React.Fragment>
                 <div className="b-panelWraper b-panelWraper_marginCenter">
-                    <MainMenu updateData={this.updateData} updateChat={this.updateChat}/>
+                    <MainMenu updateData={this.updateData} />
                     <Inbox />
                     <Contacts />
-                    <Chat updateData={this.updateChat} />
+                    <Chat updateChat={this.updateChat} />
                     <Profile />
                 </div>
             </React.Fragment>

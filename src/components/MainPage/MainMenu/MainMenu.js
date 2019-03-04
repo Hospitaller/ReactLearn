@@ -19,7 +19,11 @@ class MainMenu extends React.Component{
     }
     visBlock = (value) => {
         this.props.updateData(value);
+
+    }
+    visBlock2 = (value) => {
         this.props.updateChat(value);
+
     }
     
     render() {
@@ -41,7 +45,7 @@ class MainMenu extends React.Component{
                     </div>
                 </div>
                 <div className="b-mainMenu__socialButton" onClick={setActive} >
-                    <Whatsapp updateChild={this.visBlock}/>
+                    <Whatsapp updateChild={this.visBlock} updateChild2={this.visBlock2}/>
                     <Facebooking updateChild={this.visBlock}/>
                     <Viber updateChild={this.visBlock}/>
                     <Skype updateChild={this.visBlock}/>

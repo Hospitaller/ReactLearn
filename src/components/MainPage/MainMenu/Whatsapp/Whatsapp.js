@@ -1,10 +1,12 @@
 import React from "react";
 
+
 class Whatsapp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            block: "Whatsapp"
+            block: "Whatsapp",
+            chat: "11111"
         }
     }
     render() {
