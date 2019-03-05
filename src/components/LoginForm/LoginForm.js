@@ -1,4 +1,7 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import ButtonForm from "../ButtonForm/ButtonForm";
+import LoginHead from '../LoginHead/LoginHead';
 
 class LoginForm extends React.Component{
     constructor(props) {
@@ -11,6 +14,20 @@ class LoginForm extends React.Component{
         }
     }
     render() {
+        const setLogin = () => {
+            this.setState({login: 1});
+          }
+          const setRegister = () => {
+            this.setState({login: 0});
+          }
+        const headDataLogin = [
+            [{ title: "Login", text: "Your Company" }],
+            [{ title: "Register", text: "Register Company" }],
+          ];
+          
+          let loginHead = headDataLogin[0].map((h, index) => <LoginHead key={index} title={h.title} text={h.text} />);
+        let registerHead = headDataLogin[1].map((h, index) => <LoginHead key={index} title={h.title} text={h.text} />);
+        
         const handleNameInput = (e) => { //
             let name = e.target.value;
             if (name.length < 4) { //Более 3 символов
@@ -29,7 +46,15 @@ class LoginForm extends React.Component{
             }
         }
         return (
-            <div className="userFormWraper">
+            <BrowserRouter>
+            
+
+
+            <div id="mainWraper">
+                <div className="b-formWraper">
+                    {loginHead}
+                
+                    <div className="userFormWraper">
             <form className="b-userForm">
                 <div className="b-userForm__inputWraper">
                     <input type="text" name="firstname" placeholder="Name" onChange={handleNameInput} style={{border:this.state.colorName}}></input>
@@ -39,6 +64,24 @@ class LoginForm extends React.Component{
                 </div>
            </form>
         </div>
+
+
+                        <ButtonForm enterBtn={"Login"} toggleNow={this.props.pageHandler}/>
+                    <div className="b-togglerWraper">
+                        <Link to="/loginPage/login">
+                        <div id="loginToggler" className="b-togglerWraper__toggler" onClick={setLogin}>Login</div>
+                        </Link>
+
+                        <Link to="/loginPage/register">
+                            <div id="signinToggler" className="b-togglerWraper__toggler" onClick={setRegister}>Sign In</div>
+                        </Link>
+                    </div>
+                  </div>
+                <div id="mountain"></div>
+            </div>
+            
+
+            </BrowserRouter>
         )
     }
 }

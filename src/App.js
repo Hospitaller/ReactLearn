@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import './scss/App.scss';
 import LoginPage from './components/LoginPage/LoginPage';
 import MainPage from './components/MainPage/MainPage';
@@ -22,16 +23,22 @@ class App extends React.Component {
   }
   render() {
     
+    
     if(this.state.page === "login") {
       return (
-            <LoginPage login={1} pageHandler={this.changePage} /> 
+        <BrowserRouter>
+          <Route path="/loginPage" render={() =>  <LoginPage login={1} pageHandler={this.changePage} /> }  /> 
+        </BrowserRouter>
         )
     } else {
       return (
-        <div className="mainPageWraper">
-          <MainPage />
-          <button onClick={this.test}>НАЗАД</button>
-        </div>
+        <BrowserRouter>
+          <div className="mainPageWraper">
+            <Route path="/main" render={() => <MainPage />} />
+            <Link to="/loginPage/login">НАЗАД </Link>
+           
+            </div>
+        </BrowserRouter>
       )
     }
     
