@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import React from "react";
 import MainMenu from "./MainMenu/MainMenu";
 import Inbox from "./Inbox/Inbox";
@@ -19,6 +20,7 @@ class MainPage extends React.Component {
     }
     render() {
         return (
+          
             <React.Fragment>
                 <div className="b-panelWraper b-panelWraper_marginCenter">
                     <MainMenu updateData={this.updateData} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import ButtonForm from "../ButtonForm/ButtonForm";
 import LoginHead from '../LoginHead/LoginHead';
 
@@ -15,18 +15,21 @@ class LoginPage extends React.Component {
         name: "",
         pass: "",
         colorName: "",
-		colorPass: "",
+				colorPass: "",
         title: "Login",
-		company: "Login Company",
+			company: "Login Company",
+				data: null
     }
 	}
 	test = (value) => {
+		let data = value; //Переменная хранит инпут
+		console.log(data)
 		
-		 console.log("callback"+value)
 	}
   render() {
-    const setLogin = (value) => {
-      this.setState({title: "Login", company: "Login Company"});
+		const setLogin = (value) => {
+			this.setState({ title: "Login", company: "Login Company" });
+			this.props.dataEvent(1)
     }
     const setRegister = () => {
       this.setState({title: "Register", company: "Register Company"});
@@ -52,18 +55,22 @@ class LoginPage extends React.Component {
 			pageRender = <RegisterForm />
 	  }
 
-	  return (
+		return (
+			<BrowserRouter>
+			
 		<div id="mainWraper">
 		<div className="b-formWraper">
 				  {loginHead}
 				  {pageRender}
-			<div className="b-togglerWraper">
-				<div id="loginToggler" className="b-togglerWraper__toggler" onClick={setLogin}>Login</div>
+						<div className="b-togglerWraper">
+							<Link to="/main"><div id="loginToggler" className="b-togglerWraper__toggler" onClick={setLogin}>Login</div></Link>
+				
 				<div id="signinToggler" className="b-togglerWraper__toggler" onClick={setRegister}>Sign In</div>
 			</div>
 			</div>
 		<div id="mountain"></div>
-	</div>
+		</div>
+				</BrowserRouter>
             )
         }
 }

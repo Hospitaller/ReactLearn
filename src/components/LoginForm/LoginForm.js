@@ -22,7 +22,6 @@ class LoginForm extends React.Component{
             } else {
                 this.setState({ colorName: "none", name: name });
             }
-            console.log(name)
         }
 
         const handlePassInput = (e) => {
